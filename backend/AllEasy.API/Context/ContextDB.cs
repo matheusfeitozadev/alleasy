@@ -15,8 +15,17 @@ namespace AllEasy.API.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ProdutoContextDbConfiguration());
+            modelBuilder.Entity<Categoria>()
+            .HasMany(x => x.Produtos)
+            .WithOne(x => x.Categoria).IsRequired();
+
+            modelBuilder.Entity<Produto>()
+                .HasOne(x => x.Categoria)
+                .WithMany(x=> x.Produtos)
+                .HasForeignKey(x=> x.IdCategoria);
+
             modelBuilder.ApplyConfiguration(new CategoriaContextDbConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoContextDbConfiguration());
         }
     }
 }

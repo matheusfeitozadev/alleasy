@@ -10,6 +10,7 @@ namespace AllEasy.API.Context
         {
             builder.ToTable("PRODUTO");
             builder.Property(x=> x.IdProduto).HasColumnName("IDPRODUTO");
+            builder.Property(x=> x.IdCategoria).HasColumnName("IDCATEGORIA");
             builder.Property(x=> x.Nome).HasColumnName("NOME");
             builder.Property(x=> x.Descricao).HasColumnName("DESCRICAO");
             builder.Property(x=> x.Preco).HasColumnName("PRECO");

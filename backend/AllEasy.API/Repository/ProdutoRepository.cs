@@ -27,7 +27,7 @@ namespace AllEasy.API.Services
 
         public async Task Delete(int Id)
         {
-            var produto = _contextDB.Produtos.FirstOrDefault(x=> x.IdProduto == Id);
+            var produto = _contextDB.Produtos.FirstOrDefaultAsync(x=> x.IdProduto == Id).Result;
 
             _contextDB.Entry(produto).State = EntityState.Deleted;
             await _contextDB.SaveChangesAsync();
@@ -35,7 +35,7 @@ namespace AllEasy.API.Services
 
         public async Task<List<Produto>> GetAll()
         {
-            return await _contextDB.Produtos.ToListAsync();
+            return await _contextDB.Produtos.AsNoTracking().ToListAsync();
         }
 
         public async Task<Produto> GetById(int Id)

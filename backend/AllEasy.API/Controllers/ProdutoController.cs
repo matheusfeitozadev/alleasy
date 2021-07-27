@@ -12,6 +12,7 @@ using AllEasy.API.Models;
 namespace AllEasy.API.Controllers
 {
     [Route("api/produto")]
+    [ApiController]
     public class ProdutoController : ControllerBase
     {
         private readonly ProdutoRepository _produtoService;
@@ -53,7 +54,7 @@ namespace AllEasy.API.Controllers
             return Ok(item);
         }
 
-        [HttpDelete]
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> Delete(int Id)
         {
             await _produtoService.Delete(Id);

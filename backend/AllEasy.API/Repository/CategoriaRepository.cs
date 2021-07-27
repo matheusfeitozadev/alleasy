@@ -35,7 +35,7 @@ namespace AllEasy.API.Repository
 
         public async Task<List<Categoria>> GetAll()
         {
-            return await _contextDB.Categorias.ToListAsync();
+            return await _contextDB.Categorias.AsNoTracking().ToListAsync();
         }
 
         public async Task<Categoria> GetById(int Id)
