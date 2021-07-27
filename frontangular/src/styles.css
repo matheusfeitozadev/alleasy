@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.padding-default{
+    padding: 20px;
+}
+
+.padding-default .row{
+    margin: 10px;
+}
+
+.margin-default-1{
+    margin-top: 20px;
+}
+
+.margin-default-2{
+    margin-top: 40px;
+}
+

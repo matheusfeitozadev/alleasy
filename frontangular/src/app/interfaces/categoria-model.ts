@@ -1,5 +1,5 @@
 export interface CategoriaModel {
-    IdCategoria : Number;
+    IdCategoria? : number;
     Descricao : string;
     Ativo : boolean;
 }

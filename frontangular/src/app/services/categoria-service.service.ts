@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriaServiceService {
+export class CategoriaService {
 
   urlPath : string = "";
 
@@ -31,7 +31,7 @@ export class CategoriaServiceService {
     return this.httpClient.get<CategoriaModel>(this.urlPath + '/' + id.toString());
   }
 
-  delete(id : number) : Observable<any> {
-    return this.httpClient.delete(this.urlPath + '/' + id.toString());
+  delete(id? : number) : Observable<any> {
+    return this.httpClient.delete(this.urlPath + '/' + id?.toString());
   }
 }

@@ -1,5 +1,5 @@
 export interface ProdutoModel {
-    IdProduto : Number;
+    IdProduto? : Number;
     Nome : string;
     Descricao : string;
     Preco : Number;

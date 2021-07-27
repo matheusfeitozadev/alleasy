@@ -1,0 +1,11 @@
+{
+  "Produto": [],
+  "Categoria": [
+    {
+      "IdCategoria": 0,
+      "Descricao": "sadsdas",
+      "Ativo": true,
+      "id": 1
+    }
+  ]
+}
